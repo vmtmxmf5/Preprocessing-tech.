@@ -38,7 +38,7 @@ t['age_cls'].value_counts()
 t_sort = t.sort_values(by=['age'], ascending=False)
 ```
 
-#### query 특정 level 값들만 선택
+### query 특정 level 값들만 선택
 ```sage
 t.query("alive=='yes'").groupby('pclass').count()
 t.query("alive=='yes'")['alive']
