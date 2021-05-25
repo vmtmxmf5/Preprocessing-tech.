@@ -1,14 +1,12 @@
 ### 타이타닉 예제 살펴보기
 
-``` sage
+```
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.style.use('gadfly')
-```
 
-```sage
 titanic = sns.load_dataset('titanic')
 t = titanic.copy()
 ```
@@ -38,4 +36,10 @@ t['age_cls'].value_counts()
 ### 열 sort
 ```sage
 t_sort = t.sort_values(by=['age'], ascending=False)
+```
+
+#### query 특정 level 값들만 선택
+```sage
+t.query("alive=='yes'").groupby('pclass').count()
+t.query("alive=='yes'")['alive']
 ```
