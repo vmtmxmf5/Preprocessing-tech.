@@ -31,6 +31,16 @@ k1 = [0, 18, 35, 60, 80]
 k2 = ['아기', '청년', '장년', '중년']
 t['age_cls'] = pd.cut(t['age'], bins=k1, labels=k2)
 t['age_cls'].value_counts()
+
+age = pd.cut(t['age'], [0, 18, 40, 80])
+t.pivot_table('survived',
+              ['sex', age],
+              'class',)
+
+age = pd.qcut(t['fare'], 5)  ## 구간 개수
+t.pivot_table('survived',
+              ['who', age],
+              'class')
 ```
 
 ### 열 sort
