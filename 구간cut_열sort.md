@@ -19,7 +19,7 @@ t['survived'].sum()
 t['age'].median()
 ```
 
-*동일*한 전처리
+**동일**한 전처리
 ```sage
 t['pclass'].groupby(t['pclass']).count()
 t['pclass'].value_counts()
@@ -34,4 +34,6 @@ t['age_cls'].value_counts()
 ```
 
 ### 열 sort
+```sage
 t_sort = t.sort_values(by=['age'], ascending=False)
+```
